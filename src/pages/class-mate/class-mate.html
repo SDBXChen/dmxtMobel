@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ClassMatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>同班同学</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-row style="background-color: lightblue">
+      <ion-col  class="quick-action-item">专业</ion-col>
+      <ion-col  class="quick-action-item">姓名</ion-col>
+      <ion-col  class="quick-action-item">年级</ion-col>
+      <ion-col  class="quick-action-item">电话</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let classmate of classmatedata">
+      <ion-col class="quick-action-item" >{{classmate['profession']}}</ion-col>
+      <ion-col class="quick-action-item" >{{classmate['name'] }}</ion-col>
+      <ion-col class="quick-action-item" >{{classmate['grade']}}</ion-col>
+      <ion-col class="quick-action-item" >{{classmate['tel'] }}</ion-col>
+    </ion-row>
+  </ion-list>
+
+
+</ion-content>

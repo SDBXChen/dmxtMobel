@@ -1,0 +1,149 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-center="">
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="assets/images/registered_one.png" alt="" *ngIf="registerSlides.getActiveIndex()!=0">
+        <img src="assets/images/registered_one_one.png" alt="" *ngIf="registerSlides.getActiveIndex()==0">
+      </ion-col>
+      <ion-col align-self-center>
+        <hr class="line">
+      </ion-col>
+      <ion-col>
+        <img src="assets/images/registered_two.png" alt="" *ngIf="registerSlides.getActiveIndex()!=1">
+        <img src="assets/images/registered_two_two.png" alt="" *ngIf="registerSlides.getActiveIndex()==1">
+      </ion-col>
+      <ion-col align-self-center>
+        <hr class="line">
+      </ion-col>
+      <ion-col>
+        <img src="assets/images/register_three.png" alt="" *ngIf="registerSlides.getActiveIndex()!=2">
+        <img src="assets/images/register_three_three.png" alt="" *ngIf="registerSlides.getActiveIndex()==2">
+      </ion-col>
+    </ion-row>
+    <ion-slides #registerSlides>
+      <ion-slide>
+        <form #basemessForm="ngForm">
+        <div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-col>
+            <ion-input name="nickName" placeholder="昵称" [(ngModel)]="registerUserS.nickname" #nickName="ngModel" required></ion-input>
+            </ion-col>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="passWord" placeholder="密码" [(ngModel)]="registerUserS.password" #passWord="ngModel" required></ion-input>
+          </ion-row>
+        </div>
+        <div style="height: 30px"></div>
+        <div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input placeholder="确认密码" required></ion-input>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="phoneNumber" placeholder="手机号" [(ngModel)]="registerUserS.phoneNumber" #phoneNumber="ngModel" required></ion-input>
+          </ion-row>
+        </div>
+        <div style="height: 20px"></div>
+        <div>
+          <ion-row> <button ion-button block outline color="primary">已有账号直接登陆</button></ion-row>
+          <div style="height: 20px"></div>
+          <ion-row> <button ion-button block color="primary" [disabled]="basemessForm.invalid" (click)="next()">下一步</button></ion-row>
+        </div>
+        </form>
+      </ion-slide>
+      <ion-slide>
+
+        <div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+
+              <select name="Flag" style="height: 40px;width: 328px;background-color: #ececec" [(ngModel)]="flag" #Flag="ngModel">
+                <option selected="">学生</option>
+                <option>教师</option>
+              </select>
+
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec" *ngIf="flag=='学生'">
+            <ion-input name="Name" placeholder="姓名" [(ngModel)]="registerUserS.name" #Name="ngModel"></ion-input>
+          </ion-row>
+        </div>
+        <div style="height: 30px" *ngIf="flag=='学生'"></div>
+        <div *ngIf="flag=='学生'">
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="School" placeholder="学校" [(ngModel)]="registerUserS.school" #School="ngModel"></ion-input>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Yard" placeholder="学院" [(ngModel)]="registerUserS.yard" #Yard="ngModel"></ion-input>
+          </ion-row>
+        </div>
+        <div style="height: 30px" *ngIf="flag=='学生'"></div>
+        <div *ngIf="flag=='学生'">
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Major" placeholder="专业" [(ngModel)]="registerUserS.major" #Major="ngModel"></ion-input>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Layer" placeholder="年级" [(ngModel)]="registerUserS.layer" #Layer="ngModel"></ion-input>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Stdnum" placeholder="学号" [(ngModel)]="registerUserS.stdnum" #Stdnum="ngModel"></ion-input>
+          </ion-row>
+        </div>
+
+        <div *ngIf="flag=='教师'">
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Tname" placeholder="姓名" [(ngModel)]="registerUserT.name" #Tname="ngModel"></ion-input>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Tschool" placeholder="学校" [(ngModel)]="registerUserT.school" #Tschool="ngModel"></ion-input>
+          </ion-row>
+        </div>
+        <div style="height: 30px" *ngIf="flag=='教师'"></div>
+        <div *ngIf="flag=='教师'">
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Tyard" placeholder="学院" [(ngModel)]="registerUserT.yard" #Tyard="ngModel"></ion-input>
+          </ion-row>
+          <div style="height: 10px"></div>
+          <ion-row style="height: 40px;width: 328px;border: 1px solid lightgray;background-color: #ececec">
+            <ion-input name="Teanum" placeholder="工号" [(ngModel)]="registerUserT.teanum" #Teanum="ngModel"></ion-input>
+          </ion-row>
+        </div>
+
+
+
+
+
+
+        <div style="height: 20px"></div>
+        <div>
+          <ion-row> <button ion-button block outline color="primary" (click)="previous()">上一步</button></ion-row>
+          <div style="height: 20px"></div>
+          <ion-row> <button ion-button block color="primary" (click)="next()">下一步</button></ion-row>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <span>注册成功</span>
+        <button type="submit" ion-button block parmary (click)="returnSignin()">返回</button></ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+</ion-content>

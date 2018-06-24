@@ -1,0 +1,65 @@
+<!--
+  Generated template for the TspersonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content no-padding>
+  <div style="height: 200px;background:lightyellow">
+    <ion-row>
+      <ion-col>
+        <ion-thumbnail>
+          <img src="assets/images/touxiang.jpg" style="height:150px;width: 150px;position: absolute;margin-top: 20px">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col style="margin-top: 70px;font-size: 20px">
+        <ion-row>{{persondata['username']}}</ion-row>
+        <ion-row>工号：{{persondata['ID']}}</ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div style="height: 30px"></div>
+
+  <div style="height:100%;background: lightgoldenrodyellow">
+  <ion-row>
+    <ion-col class="quick-action-item">
+      <a (click)="toTcourse()">
+      <div class="divtype">
+        <img src="assets/images/course.png" alt="">
+      </div>
+      </a>
+      <div> 教师课程</div>
+    </ion-col>
+    <ion-col class="quick-action-item">
+      <a (click)="toStudentList()">
+        <div class="divtype">
+          <img src="assets/images/student.png" alt="">
+        </div></a>
+      <div>学生列表</div>
+    </ion-col>
+  </ion-row>
+    <ion-row>
+    <ion-col class="quick-action-item">
+      <a (click)="toTsignin()">
+        <div class="divtype">
+          <img src="assets/images/qiandao.png" alt="">
+        </div>
+      </a>
+      <div>学生签到</div>
+
+    </ion-col>
+    <ion-col class="quick-action-item" >
+      <a (click)="toTleave()">
+      <div class="divtype">
+        <img src="assets/images/leave.png" alt="">
+      </div>
+      </a>
+      <div>学生请假</div>
+
+    </ion-col>
+  </ion-row>
+  </div>
+</ion-content>
+<ion-footer>
+  <button ion-button block color="primary"  text-center (click)="toexit()" >安全退出</button>
+</ion-footer>

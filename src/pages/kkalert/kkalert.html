@@ -1,0 +1,24 @@
+<!--
+  Generated template for the KkalertPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>旷课警告</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+ <ion-row  *ngFor="let scourse of scoursedata">
+    <ion-col class="quick-action-item" style="background-color: lightblue">{{scourse['course']['course_name']}}已旷课{{scourse['absence']}}节</ion-col>
+   <ion-col class="quick-action-item"><progress-bar total='10' amount={{scourse.absence}}></progress-bar></ion-col>
+
+ </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the TsigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title [hidden]="flag==false">正在签到中</ion-title>
+    <select name="Flag" style="height: 40px;width: 100px;float: right;background-color:#488aff;color:white;border-color: #488aff"
+            [(ngModel)]="firstdata.ID" #Flag="ngModel" (change)="selectfresh()" [disabled]="selectflag==true">
+      <option *ngFor="let tcourse of tcousedata" value="{{tcourse['course_number']}}">{{tcourse['course_name']}}</option>
+    </select>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <input type="text" id="lat" title=""  [hidden]="true">
+  <input type="text" id="lng" title="" [hidden]="true">
+  <ion-list>
+  <ion-row style="background-color: lightblue">
+    <ion-col  class="quick-action-item">开始签到时间</ion-col>
+    <ion-col  class="quick-action-item">结束签到时间</ion-col>
+    <ion-col  class="quick-action-item">签到ID</ion-col>
+  </ion-row>
+    <ion-row *ngFor="let rdata of registerdata">
+      <ion-col class="quick-action-item" >{{rdata['start_time']}}</ion-col>
+      <ion-col class="quick-action-item" >{{rdata['end_time']}}</ion-col>
+      <ion-col class="quick-action-item" >{{rdata['register_ID']}}</ion-col>
+
+    </ion-row>
+
+
+  </ion-list>
+  <!--<div #container id="container" style="height: 400px;width: 100%"></div>
+   <button ion-button block outline color="primary" (click)="loadmap()">注册新账号</button>-->
+</ion-content>
+<ion-footer>
+  <button ion-button block color="primary" [hidden]="flag==true" (click)="startsignin()">开始签到</button>
+  <button ion-button block color="primary" [hidden]="flag==false" (click)="endsignin()">结束签到</button>
+</ion-footer>
+

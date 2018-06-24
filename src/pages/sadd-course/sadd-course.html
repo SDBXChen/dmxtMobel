@@ -1,0 +1,38 @@
+<!--
+  Generated template for the SaddCoursePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>选课</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-content style="width:40%;background:#f4f4f4;float: left">
+    <ion-list>
+      <ion-item style="background-color: lightblue">老师</ion-item>
+      <ion-item  *ngFor="let tdata of teacherlistdata" (click)="selectTeacher(tdata)" [ngClass]="{'item-active':tdata['name']==activeteacher}">{{tdata['name']}}</ion-item>
+
+    </ion-list>
+
+  </ion-content>
+  <ion-content style="width:60%;float: right">
+    <ion-list>
+      <ion-item style="background-color: lightblue">课程</ion-item>
+      <ion-item *ngFor="let tcouse of tcousedata"  (click)="selectcourse(tcouse)" [hidden]="count==0">{{tcouse['course_name']}}</ion-item>
+    </ion-list>
+
+    <ion-footer>
+      <ion-toolbar>
+
+      </ion-toolbar>
+    </ion-footer>
+  </ion-content>
+
+</ion-content>

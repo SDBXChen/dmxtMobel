@@ -1,0 +1,48 @@
+<!--
+  Generated template for the EditCoursePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title color="primary">编辑课程</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+  <ion-col class="quick-action-item">
+    <p>课程序号：</p>
+    <ion-input style="border: 1px solid #ececec;" disabled="" name="course_number" [(ngModel)]="tcourse['course_number']" #course_number="ngModel"></ion-input>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="quick-action-item">
+      <p>课程名称：</p>
+      <ion-input style="border: 1px solid #ececec;" name="course_name" [(ngModel)]="tcourse['course_name']" #course_name="ngModel"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="quick-action-item">
+      <p>上课时间：</p>
+      <ion-input style="border: 1px solid #ececec;" name="class_time" [(ngModel)]="tcourse['class_time']" #class_time="ngModel"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="quick-action-item">
+      <p>上课地点：</p>
+      <ion-input style="border: 1px solid #ececec;" name="class_location" [(ngModel)]="tcourse['class_location']" #class_location="ngModel"></ion-input>
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col> <button ion-button block color="primary" (click)="editdata()">保存</button></ion-col>
+    <ion-col> <button ion-button block outline color="primary" (click)="deletedata()">删除</button></ion-col>
+
+  </ion-row>
+</ion-footer>

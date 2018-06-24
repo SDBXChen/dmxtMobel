@@ -5,25 +5,35 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import {LoginPage} from "../pages/login/login";
+import {SpersonPage} from "../pages/sperson/sperson";
+import {NotePage} from "../pages/note/note";
+import {WelcomePage} from "../pages/welcome/welcome";
+import {LocalStorageProvider} from "../providers/local-storage";
 
 @Component({
-  templateUrl: 'app.html'
+  template:`<ion-nav [root]='root'></ion-nav>`
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
-
-  pages: Array<{title: string, component: any}>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  root: any = WelcomePage;
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private storage:LocalStorageProvider) {
     this.initializeApp();
+    let appConfig:any = this.storage.get('App',{
+      isRun:false,
+      version:'1.0.0'
+    });
+    if(appConfig.isRun==false){
+      this.root = WelcomePage;
+      appConfig.isRun = true;
+      this.storage.set('App',appConfig);
+    }
+    else{
+      this.root=LoginPage;
 
+    }
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
 
   }
 

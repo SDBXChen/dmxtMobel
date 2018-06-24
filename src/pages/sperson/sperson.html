@@ -1,0 +1,86 @@
+<!--
+  Generated template for the SpersonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content no-padding >
+  <div style="height: 200px;background:lightyellow">
+    <ion-row>
+      <ion-col>
+        <ion-thumbnail>
+          <img src="assets/images/touxiang.jpg" style="height:150px;width: 150px;position: absolute;margin-top: 20px">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col style="margin-top: 70px;font-size: 20px">
+        <ion-row>{{persondata['username']}}</ion-row>
+        <ion-row>学号：{{persondata['ID']}}</ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div style="height: 30px"></div>
+
+  <div style="height:100%;background: lightgoldenrodyellow">
+  <ion-row>
+    <ion-col class="quick-action-item">
+      <a (click)="toclassmate()">
+      <div class="divtype">
+      <img src="assets/images/classmate.png" alt="">
+      </div>
+      </a>
+      <div> 班级同学</div>
+    </ion-col>
+    <ion-col class="quick-action-item">
+      <a (click)="toSettingPage()">
+      <div class="divtype">
+        <img src="assets/images/setting.png" alt="">
+      </div></a>
+      <div>个性化设置</div>
+
+    </ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col class="quick-action-item">
+        <a (click)="toKkalertPage()">
+          <div class="divtype">
+            <img src="assets/images/alert.png" alt="">
+          </div>
+        </a>
+        <div> 旷课警告</div>
+      </ion-col>
+
+
+      <ion-col class="quick-action-item" >
+        <a (click)="toScourse()">
+        <div class="divtype">
+          <img src="assets/images/course.png" alt="">
+        </div>
+        </a>
+        <div>课程数目</div>
+
+      </ion-col>
+  </ion-row>
+    <ion-row>
+        <ion-col class="quick-action-item">
+        <a (click)="toLeavePage()">
+        <div class="divtype">
+          <img src="assets/images/leave.png" alt="">
+        </div>
+        </a>
+        <div> 请假事项</div>
+
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a (click)="toSiginPage()">
+        <div class="divtype">
+          <img src="assets/images/qiandao.png" alt="">
+        </div>
+        </a>
+        <div> 签到事项</div>
+       </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-content>
